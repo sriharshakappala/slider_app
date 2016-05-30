@@ -1,0 +1,683 @@
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-30 17:22:32 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 10ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/get_config" for 127.0.0.1 at 2016-05-30 17:22:32 +0530
+Processing by HomeController#get_config as */*
+  [1m[35mParentSlider Load (0.1ms)[0m  SELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1
+  [1m[36mChildSlider Load (0.1ms)[0m  [1mSELECT "child_sliders"."value" FROM "child_sliders"  ORDER BY "child_sliders"."count" ASC[0m
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-30 17:22:40 +0530
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/get_config" for 127.0.0.1 at 2016-05-30 17:22:40 +0530
+Processing by HomeController#get_config as */*
+  [1m[35mParentSlider Load (0.1ms)[0m  SELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1
+  [1m[36mChildSlider Load (0.1ms)[0m  [1mSELECT "child_sliders"."value" FROM "child_sliders"  ORDER BY "child_sliders"."count" ASC[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-30 17:22:41 +0530
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/get_config" for 127.0.0.1 at 2016-05-30 17:22:41 +0530
+Processing by HomeController#get_config as */*
+  [1m[35mParentSlider Load (0.2ms)[0m  SELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1
+  [1m[36mChildSlider Load (0.1ms)[0m  [1mSELECT "child_sliders"."value" FROM "child_sliders"  ORDER BY "child_sliders"."count" ASC[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/set_parent_slider_value" for 127.0.0.1 at 2016-05-30 17:22:42 +0530
+Processing by HomeController#set_parent_slider_value as */*
+  Parameters: {"slider"=>"1"}
+  [1m[35mParentSlider Load (0.1ms)[0m  SELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "parent_sliders" SET "value" = ?, "updated_at" = ? WHERE "parent_sliders"."id" = ?[0m  [["value", 1], ["updated_at", "2016-05-30 11:52:42.413727"], ["id", 2]]
+  [1m[35m (388.1ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 395ms (Views: 0.8ms | ActiveRecord: 388.4ms)
+
+
+Started POST "/delete_slider" for 127.0.0.1 at 2016-05-30 17:22:42 +0530
+Processing by HomeController#delete_slider as */*
+  Parameters: {"count"=>"6"}
+  [1m[36mChildSlider Load (0.1ms)[0m  [1mSELECT  "child_sliders".* FROM "child_sliders" WHERE "child_sliders"."count" = ? LIMIT 1[0m  [["count", 6]]
+  [1m[35mSQL (262.9ms)[0m  DELETE FROM "child_sliders" WHERE "child_sliders"."id" = ?  [["id", 24]]
+  Rendered text template (0.0ms)
+Completed 200 OK in 272ms (Views: 0.8ms | ActiveRecord: 263.0ms)
+
+
+Started POST "/delete_slider" for 127.0.0.1 at 2016-05-30 17:22:43 +0530
+Processing by HomeController#delete_slider as */*
+  Parameters: {"count"=>"4"}
+  [1m[36mChildSlider Load (0.1ms)[0m  [1mSELECT  "child_sliders".* FROM "child_sliders" WHERE "child_sliders"."count" = ? LIMIT 1[0m  [["count", 4]]
+  [1m[35mSQL (120.1ms)[0m  DELETE FROM "child_sliders" WHERE "child_sliders"."id" = ?  [["id", 21]]
+  Rendered text template (0.0ms)
+Completed 200 OK in 123ms (Views: 0.3ms | ActiveRecord: 120.2ms)
+
+
+Started POST "/delete_slider" for 127.0.0.1 at 2016-05-30 17:22:43 +0530
+Processing by HomeController#delete_slider as */*
+  Parameters: {"count"=>"5"}
+  [1m[36mChildSlider Load (0.1ms)[0m  [1mSELECT  "child_sliders".* FROM "child_sliders" WHERE "child_sliders"."count" = ? LIMIT 1[0m  [["count", 5]]
+  [1m[35mSQL (138.8ms)[0m  DELETE FROM "child_sliders" WHERE "child_sliders"."id" = ?  [["id", 22]]
+  Rendered text template (0.0ms)
+Completed 200 OK in 140ms (Views: 0.3ms | ActiveRecord: 138.9ms)
+
+
+Started POST "/delete_slider" for 127.0.0.1 at 2016-05-30 17:22:43 +0530
+Processing by HomeController#delete_slider as */*
+  Parameters: {"count"=>"2"}
+  [1m[36mChildSlider Load (0.1ms)[0m  [1mSELECT  "child_sliders".* FROM "child_sliders" WHERE "child_sliders"."count" = ? LIMIT 1[0m  [["count", 2]]
+  [1m[35mSQL (130.2ms)[0m  DELETE FROM "child_sliders" WHERE "child_sliders"."id" = ?  [["id", 19]]
+  Rendered text template (0.0ms)
+Completed 200 OK in 132ms (Views: 0.4ms | ActiveRecord: 130.3ms)
+
+
+Started POST "/delete_slider" for 127.0.0.1 at 2016-05-30 17:22:43 +0530
+Processing by HomeController#delete_slider as */*
+  Parameters: {"count"=>"3"}
+  [1m[36mChildSlider Load (0.1ms)[0m  [1mSELECT  "child_sliders".* FROM "child_sliders" WHERE "child_sliders"."count" = ? LIMIT 1[0m  [["count", 3]]
+  [1m[35mSQL (120.4ms)[0m  DELETE FROM "child_sliders" WHERE "child_sliders"."id" = ?  [["id", 20]]
+  Rendered text template (0.0ms)
+Completed 200 OK in 123ms (Views: 0.3ms | ActiveRecord: 120.5ms)
+
+
+Started POST "/set_parent_slider_value" for 127.0.0.1 at 2016-05-30 17:22:43 +0530
+Processing by HomeController#set_parent_slider_value as */*
+  Parameters: {"slider"=>"2"}
+  [1m[36mParentSlider Load (0.1ms)[0m  [1mSELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "parent_sliders" SET "value" = ?, "updated_at" = ? WHERE "parent_sliders"."id" = ?  [["value", 2], ["updated_at", "2016-05-30 11:52:43.620356"], ["id", 2]]
+  [1m[36m (145.3ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 148ms (Views: 0.4ms | ActiveRecord: 145.6ms)
+
+
+Started POST "/create_slider" for 127.0.0.1 at 2016-05-30 17:22:43 +0530
+Processing by HomeController#create_slider as */*
+  Parameters: {"count"=>"2"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "child_sliders" ("count", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["count", 2], ["value", 0], ["created_at", "2016-05-30 11:52:43.776834"], ["updated_at", "2016-05-30 11:52:43.776834"]]
+  [1m[35m (121.2ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 125ms (Views: 0.4ms | ActiveRecord: 121.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-30 17:22:54 +0530
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/get_config" for 127.0.0.1 at 2016-05-30 17:22:54 +0530
+Processing by HomeController#get_config as */*
+  [1m[36mParentSlider Load (0.1ms)[0m  [1mSELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1[0m
+  [1m[35mChildSlider Load (0.1ms)[0m  SELECT "child_sliders"."value" FROM "child_sliders"  ORDER BY "child_sliders"."count" ASC
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/set_parent_slider_value" for 127.0.0.1 at 2016-05-30 17:22:55 +0530
+Processing by HomeController#set_parent_slider_value as */*
+  Parameters: {"slider"=>"4"}
+  [1m[36mParentSlider Load (0.1ms)[0m  [1mSELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "parent_sliders" SET "value" = ?, "updated_at" = ? WHERE "parent_sliders"."id" = ?  [["value", 4], ["updated_at", "2016-05-30 11:52:55.492471"], ["id", 2]]
+  [1m[36m (186.8ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 189ms (Views: 0.3ms | ActiveRecord: 187.1ms)
+
+
+Started POST "/create_slider" for 127.0.0.1 at 2016-05-30 17:22:55 +0530
+Processing by HomeController#create_slider as */*
+  Parameters: {"count"=>"3"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "child_sliders" ("count", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["count", 3], ["value", 0], ["created_at", "2016-05-30 11:52:55.689304"], ["updated_at", "2016-05-30 11:52:55.689304"]]
+  [1m[35m (123.6ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 126ms (Views: 0.3ms | ActiveRecord: 123.8ms)
+
+
+Started POST "/create_slider" for 127.0.0.1 at 2016-05-30 17:22:55 +0530
+Processing by HomeController#create_slider as */*
+  Parameters: {"count"=>"4"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "child_sliders" ("count", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["count", 4], ["value", 0], ["created_at", "2016-05-30 11:52:55.816861"], ["updated_at", "2016-05-30 11:52:55.816861"]]
+  [1m[36m (121.7ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 124ms (Views: 0.5ms | ActiveRecord: 121.8ms)
+
+
+Started POST "/set_parent_slider_value" for 127.0.0.1 at 2016-05-30 17:22:56 +0530
+Processing by HomeController#set_parent_slider_value as */*
+  Parameters: {"slider"=>"10"}
+  [1m[35mParentSlider Load (0.1ms)[0m  SELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "parent_sliders" SET "value" = ?, "updated_at" = ? WHERE "parent_sliders"."id" = ?[0m  [["value", 10], ["updated_at", "2016-05-30 11:52:56.938542"], ["id", 2]]
+  [1m[35m (142.2ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 145ms (Views: 0.3ms | ActiveRecord: 142.4ms)
+
+
+Started POST "/create_slider" for 127.0.0.1 at 2016-05-30 17:22:57 +0530
+Processing by HomeController#create_slider as */*
+  Parameters: {"count"=>"5"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "child_sliders" ("count", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["count", 5], ["value", 0], ["created_at", "2016-05-30 11:52:57.097521"], ["updated_at", "2016-05-30 11:52:57.097521"]]
+  [1m[36m (124.6ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 128ms (Views: 0.3ms | ActiveRecord: 124.9ms)
+
+
+Started POST "/create_slider" for 127.0.0.1 at 2016-05-30 17:22:57 +0530
+Processing by HomeController#create_slider as */*
+  Parameters: {"count"=>"7"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "child_sliders" ("count", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["count", 7], ["value", 0], ["created_at", "2016-05-30 11:52:57.226471"], ["updated_at", "2016-05-30 11:52:57.226471"]]
+  [1m[35m (121.7ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 123ms (Views: 0.3ms | ActiveRecord: 121.8ms)
+
+
+Started POST "/create_slider" for 127.0.0.1 at 2016-05-30 17:22:57 +0530
+Processing by HomeController#create_slider as */*
+  Parameters: {"count"=>"6"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "child_sliders" ("count", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["count", 6], ["value", 0], ["created_at", "2016-05-30 11:52:57.351924"], ["updated_at", "2016-05-30 11:52:57.351924"]]
+  [1m[36m (130.4ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 132ms (Views: 0.3ms | ActiveRecord: 130.5ms)
+
+
+Started POST "/create_slider" for 127.0.0.1 at 2016-05-30 17:22:57 +0530
+Processing by HomeController#create_slider as */*
+  Parameters: {"count"=>"9"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "child_sliders" ("count", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["count", 9], ["value", 0], ["created_at", "2016-05-30 11:52:57.485933"], ["updated_at", "2016-05-30 11:52:57.485933"]]
+  [1m[35m (146.9ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 149ms (Views: 0.3ms | ActiveRecord: 147.1ms)
+
+
+Started POST "/create_slider" for 127.0.0.1 at 2016-05-30 17:22:57 +0530
+Processing by HomeController#create_slider as */*
+  Parameters: {"count"=>"8"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "child_sliders" ("count", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["count", 8], ["value", 0], ["created_at", "2016-05-30 11:52:57.636570"], ["updated_at", "2016-05-30 11:52:57.636570"]]
+  [1m[36m (138.4ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 140ms (Views: 0.3ms | ActiveRecord: 138.5ms)
+
+
+Started POST "/create_slider" for 127.0.0.1 at 2016-05-30 17:22:57 +0530
+Processing by HomeController#create_slider as */*
+  Parameters: {"count"=>"10"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "child_sliders" ("count", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["count", 10], ["value", 0], ["created_at", "2016-05-30 11:52:57.778749"], ["updated_at", "2016-05-30 11:52:57.778749"]]
+  [1m[35m (121.8ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 123ms (Views: 0.3ms | ActiveRecord: 121.9ms)
+
+
+Started POST "/set_child_slider_value" for 127.0.0.1 at 2016-05-30 17:22:58 +0530
+Processing by HomeController#set_child_slider_value as */*
+  Parameters: {"value"=>"2", "count"=>"1"}
+  [1m[36mChildSlider Load (0.1ms)[0m  [1mSELECT  "child_sliders".* FROM "child_sliders" WHERE "child_sliders"."count" = ? LIMIT 1[0m  [["count", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "child_sliders" SET "value" = ?, "updated_at" = ? WHERE "child_sliders"."id" = ?[0m  [["value", 2], ["updated_at", "2016-05-30 11:52:58.065563"], ["id", 18]]
+  [1m[35m (126.5ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 129ms (Views: 0.3ms | ActiveRecord: 126.8ms)
+
+
+Started POST "/set_child_slider_value" for 127.0.0.1 at 2016-05-30 17:22:58 +0530
+Processing by HomeController#set_child_slider_value as */*
+  Parameters: {"value"=>"2", "count"=>"2"}
+  [1m[36mChildSlider Load (0.1ms)[0m  [1mSELECT  "child_sliders".* FROM "child_sliders" WHERE "child_sliders"."count" = ? LIMIT 1[0m  [["count", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "child_sliders" SET "value" = ?, "updated_at" = ? WHERE "child_sliders"."id" = ?[0m  [["value", 2], ["updated_at", "2016-05-30 11:52:58.638903"], ["id", 25]]
+  [1m[35m (120.4ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 130ms (Views: 0.4ms | ActiveRecord: 120.7ms)
+
+
+Started POST "/set_child_slider_value" for 127.0.0.1 at 2016-05-30 17:22:59 +0530
+Processing by HomeController#set_child_slider_value as */*
+  Parameters: {"value"=>"1", "count"=>"3"}
+  [1m[36mChildSlider Load (0.2ms)[0m  [1mSELECT  "child_sliders".* FROM "child_sliders" WHERE "child_sliders"."count" = ? LIMIT 1[0m  [["count", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "child_sliders" SET "value" = ?, "updated_at" = ? WHERE "child_sliders"."id" = ?[0m  [["value", 1], ["updated_at", "2016-05-30 11:52:59.822576"], ["id", 26]]
+  [1m[35m (120.2ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 125ms (Views: 0.3ms | ActiveRecord: 120.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-30 17:23:00 +0530
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/get_config" for 127.0.0.1 at 2016-05-30 17:23:00 +0530
+Processing by HomeController#get_config as */*
+  [1m[36mParentSlider Load (0.1ms)[0m  [1mSELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1[0m
+  [1m[35mChildSlider Load (0.1ms)[0m  SELECT "child_sliders"."value" FROM "child_sliders"  ORDER BY "child_sliders"."count" ASC
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/get_config" for 127.0.0.1 at 2016-05-30 17:27:54 +0530
+Processing by HomeController#get_config as */*
+  [1m[36mParentSlider Load (0.1ms)[0m  [1mSELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1[0m
+  [1m[35mChildSlider Load (0.1ms)[0m  SELECT "child_sliders"."value" FROM "child_sliders"  ORDER BY "child_sliders"."count" ASC
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/set_parent_slider_value" for 127.0.0.1 at 2016-05-30 17:28:21 +0530
+Processing by HomeController#set_parent_slider_value as */*
+  Parameters: {"slider"=>"0"}
+  [1m[36mParentSlider Load (0.1ms)[0m  [1mSELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "parent_sliders" SET "value" = ?, "updated_at" = ? WHERE "parent_sliders"."id" = ?  [["value", 0], ["updated_at", "2016-05-30 11:58:21.073195"], ["id", 2]]
+  [1m[36m (121.6ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 125ms (Views: 0.6ms | ActiveRecord: 121.8ms)
+
+
+Started POST "/delete_slider" for 127.0.0.1 at 2016-05-30 17:28:21 +0530
+Processing by HomeController#delete_slider as */*
+  Parameters: {"count"=>"10"}
+  [1m[35mChildSlider Load (0.1ms)[0m  SELECT  "child_sliders".* FROM "child_sliders" WHERE "child_sliders"."count" = ? LIMIT 1  [["count", 10]]
+  [1m[36mSQL (126.7ms)[0m  [1mDELETE FROM "child_sliders" WHERE "child_sliders"."id" = ?[0m  [["id", 33]]
+  Rendered text template (0.0ms)
+Completed 200 OK in 128ms (Views: 0.3ms | ActiveRecord: 126.8ms)
+
+
+Started POST "/delete_slider" for 127.0.0.1 at 2016-05-30 17:28:21 +0530
+Processing by HomeController#delete_slider as */*
+  Parameters: {"count"=>"6"}
+  [1m[35mChildSlider Load (0.1ms)[0m  SELECT  "child_sliders".* FROM "child_sliders" WHERE "child_sliders"."count" = ? LIMIT 1  [["count", 6]]
+  [1m[36mSQL (121.1ms)[0m  [1mDELETE FROM "child_sliders" WHERE "child_sliders"."id" = ?[0m  [["id", 30]]
+  Rendered text template (0.0ms)
+Completed 200 OK in 122ms (Views: 0.3ms | ActiveRecord: 121.1ms)
+
+
+Started POST "/delete_slider" for 127.0.0.1 at 2016-05-30 17:28:21 +0530
+Processing by HomeController#delete_slider as */*
+  Parameters: {"count"=>"9"}
+  [1m[35mChildSlider Load (0.1ms)[0m  SELECT  "child_sliders".* FROM "child_sliders" WHERE "child_sliders"."count" = ? LIMIT 1  [["count", 9]]
+  [1m[36mSQL (121.0ms)[0m  [1mDELETE FROM "child_sliders" WHERE "child_sliders"."id" = ?[0m  [["id", 31]]
+  Rendered text template (0.0ms)
+Completed 200 OK in 122ms (Views: 0.3ms | ActiveRecord: 121.1ms)
+
+
+Started POST "/delete_slider" for 127.0.0.1 at 2016-05-30 17:28:21 +0530
+Processing by HomeController#delete_slider as */*
+  Parameters: {"count"=>"8"}
+  [1m[35mChildSlider Load (0.1ms)[0m  SELECT  "child_sliders".* FROM "child_sliders" WHERE "child_sliders"."count" = ? LIMIT 1  [["count", 8]]
+  [1m[36mSQL (119.8ms)[0m  [1mDELETE FROM "child_sliders" WHERE "child_sliders"."id" = ?[0m  [["id", 32]]
+  Rendered text template (0.0ms)
+Completed 200 OK in 121ms (Views: 0.3ms | ActiveRecord: 119.9ms)
+
+
+Started POST "/delete_slider" for 127.0.0.1 at 2016-05-30 17:28:21 +0530
+Processing by HomeController#delete_slider as */*
+  Parameters: {"count"=>"7"}
+  [1m[35mChildSlider Load (0.1ms)[0m  SELECT  "child_sliders".* FROM "child_sliders" WHERE "child_sliders"."count" = ? LIMIT 1  [["count", 7]]
+  [1m[36mSQL (138.4ms)[0m  [1mDELETE FROM "child_sliders" WHERE "child_sliders"."id" = ?[0m  [["id", 29]]
+  Rendered text template (0.0ms)
+Completed 200 OK in 144ms (Views: 0.5ms | ActiveRecord: 138.5ms)
+
+
+Started POST "/delete_slider" for 127.0.0.1 at 2016-05-30 17:28:21 +0530
+Processing by HomeController#delete_slider as */*
+  Parameters: {"count"=>"5"}
+  [1m[35mChildSlider Load (0.1ms)[0m  SELECT  "child_sliders".* FROM "child_sliders" WHERE "child_sliders"."count" = ? LIMIT 1  [["count", 5]]
+  [1m[36mSQL (166.1ms)[0m  [1mDELETE FROM "child_sliders" WHERE "child_sliders"."id" = ?[0m  [["id", 28]]
+  Rendered text template (0.0ms)
+Completed 200 OK in 168ms (Views: 0.4ms | ActiveRecord: 166.2ms)
+
+
+Started POST "/delete_slider" for 127.0.0.1 at 2016-05-30 17:28:22 +0530
+Processing by HomeController#delete_slider as */*
+  Parameters: {"count"=>"4"}
+  [1m[35mChildSlider Load (0.1ms)[0m  SELECT  "child_sliders".* FROM "child_sliders" WHERE "child_sliders"."count" = ? LIMIT 1  [["count", 4]]
+  [1m[36mSQL (137.7ms)[0m  [1mDELETE FROM "child_sliders" WHERE "child_sliders"."id" = ?[0m  [["id", 27]]
+  Rendered text template (0.0ms)
+Completed 200 OK in 140ms (Views: 0.3ms | ActiveRecord: 137.8ms)
+
+
+Started POST "/delete_slider" for 127.0.0.1 at 2016-05-30 17:28:22 +0530
+Processing by HomeController#delete_slider as */*
+  Parameters: {"count"=>"3"}
+  [1m[35mChildSlider Load (0.1ms)[0m  SELECT  "child_sliders".* FROM "child_sliders" WHERE "child_sliders"."count" = ? LIMIT 1  [["count", 3]]
+  [1m[36mSQL (120.7ms)[0m  [1mDELETE FROM "child_sliders" WHERE "child_sliders"."id" = ?[0m  [["id", 26]]
+  Rendered text template (0.0ms)
+Completed 200 OK in 122ms (Views: 0.3ms | ActiveRecord: 120.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-30 17:28:22 +0530
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/delete_slider" for 127.0.0.1 at 2016-05-30 17:28:22 +0530
+Processing by HomeController#delete_slider as */*
+  Parameters: {"count"=>"2"}
+  [1m[35mChildSlider Load (0.1ms)[0m  SELECT  "child_sliders".* FROM "child_sliders" WHERE "child_sliders"."count" = ? LIMIT 1  [["count", 2]]
+  [1m[36mSQL (302.2ms)[0m  [1mDELETE FROM "child_sliders" WHERE "child_sliders"."id" = ?[0m  [["id", 25]]
+  Rendered text template (0.0ms)
+Completed 200 OK in 305ms (Views: 0.3ms | ActiveRecord: 302.3ms)
+
+
+Started POST "/delete_slider" for 127.0.0.1 at 2016-05-30 17:28:22 +0530
+Processing by HomeController#delete_slider as */*
+  Parameters: {"count"=>"1"}
+  [1m[35mChildSlider Load (0.1ms)[0m  SELECT  "child_sliders".* FROM "child_sliders" WHERE "child_sliders"."count" = ? LIMIT 1  [["count", 1]]
+  [1m[36mSQL (128.5ms)[0m  [1mDELETE FROM "child_sliders" WHERE "child_sliders"."id" = ?[0m  [["id", 18]]
+  Rendered text template (0.0ms)
+Completed 200 OK in 130ms (Views: 0.3ms | ActiveRecord: 128.5ms)
+
+
+Started POST "/get_config" for 127.0.0.1 at 2016-05-30 17:28:22 +0530
+Processing by HomeController#get_config as */*
+  [1m[35mParentSlider Load (0.1ms)[0m  SELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1
+  [1m[36mChildSlider Load (0.0ms)[0m  [1mSELECT "child_sliders"."value" FROM "child_sliders"  ORDER BY "child_sliders"."count" ASC[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/set_parent_slider_value" for 127.0.0.1 at 2016-05-30 17:28:23 +0530
+Processing by HomeController#set_parent_slider_value as */*
+  Parameters: {"slider"=>"2"}
+  [1m[35mParentSlider Load (0.1ms)[0m  SELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "parent_sliders" SET "value" = ?, "updated_at" = ? WHERE "parent_sliders"."id" = ?[0m  [["value", 2], ["updated_at", "2016-05-30 11:58:23.762583"], ["id", 2]]
+  [1m[35m (121.3ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 124ms (Views: 0.4ms | ActiveRecord: 121.5ms)
+
+
+Started POST "/create_slider" for 127.0.0.1 at 2016-05-30 17:28:23 +0530
+Processing by HomeController#create_slider as */*
+  Parameters: {"count"=>"1"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "child_sliders" ("count", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["count", 1], ["value", 0], ["created_at", "2016-05-30 11:58:23.897754"], ["updated_at", "2016-05-30 11:58:23.897754"]]
+  [1m[36m (161.1ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 164ms (Views: 0.3ms | ActiveRecord: 161.3ms)
+
+
+Started POST "/create_slider" for 127.0.0.1 at 2016-05-30 17:28:24 +0530
+Processing by HomeController#create_slider as */*
+  Parameters: {"count"=>"2"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "child_sliders" ("count", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["count", 2], ["value", 0], ["created_at", "2016-05-30 11:58:24.063290"], ["updated_at", "2016-05-30 11:58:24.063290"]]
+  [1m[35m (104.8ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 107ms (Views: 0.3ms | ActiveRecord: 105.0ms)
+
+
+Started POST "/set_child_slider_value" for 127.0.0.1 at 2016-05-30 17:28:25 +0530
+Processing by HomeController#set_child_slider_value as */*
+  Parameters: {"value"=>"2", "count"=>"1"}
+  [1m[36mChildSlider Load (0.1ms)[0m  [1mSELECT  "child_sliders".* FROM "child_sliders" WHERE "child_sliders"."count" = ? LIMIT 1[0m  [["count", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "child_sliders" SET "value" = ?, "updated_at" = ? WHERE "child_sliders"."id" = ?[0m  [["value", 2], ["updated_at", "2016-05-30 11:58:25.347110"], ["id", 34]]
+  [1m[35m (163.6ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 167ms (Views: 0.4ms | ActiveRecord: 163.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-30 17:28:26 +0530
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/get_config" for 127.0.0.1 at 2016-05-30 17:28:26 +0530
+Processing by HomeController#get_config as */*
+  [1m[36mParentSlider Load (0.1ms)[0m  [1mSELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1[0m
+  [1m[35mChildSlider Load (0.1ms)[0m  SELECT "child_sliders"."value" FROM "child_sliders"  ORDER BY "child_sliders"."count" ASC
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/set_child_slider_value" for 127.0.0.1 at 2016-05-30 17:28:27 +0530
+Processing by HomeController#set_child_slider_value as */*
+  Parameters: {"value"=>"3", "count"=>"2"}
+  [1m[36mChildSlider Load (0.1ms)[0m  [1mSELECT  "child_sliders".* FROM "child_sliders" WHERE "child_sliders"."count" = ? LIMIT 1[0m  [["count", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "child_sliders" SET "value" = ?, "updated_at" = ? WHERE "child_sliders"."id" = ?[0m  [["value", 3], ["updated_at", "2016-05-30 11:58:27.639486"], ["id", 35]]
+  [1m[35m (197.8ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 200ms (Views: 0.3ms | ActiveRecord: 197.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-30 17:28:28 +0530
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/get_config" for 127.0.0.1 at 2016-05-30 17:28:28 +0530
+Processing by HomeController#get_config as */*
+  [1m[36mParentSlider Load (0.1ms)[0m  [1mSELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1[0m
+  [1m[35mChildSlider Load (0.1ms)[0m  SELECT "child_sliders"."value" FROM "child_sliders"  ORDER BY "child_sliders"."count" ASC
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/set_parent_slider_value" for 127.0.0.1 at 2016-05-30 17:28:47 +0530
+Processing by HomeController#set_parent_slider_value as */*
+  Parameters: {"slider"=>"4"}
+  [1m[36mParentSlider Load (0.1ms)[0m  [1mSELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "parent_sliders" SET "value" = ?, "updated_at" = ? WHERE "parent_sliders"."id" = ?  [["value", 4], ["updated_at", "2016-05-30 11:58:47.355554"], ["id", 2]]
+  [1m[36m (135.0ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.1ms)
+Completed 200 OK in 138ms (Views: 0.8ms | ActiveRecord: 135.2ms)
+
+
+Started POST "/create_slider" for 127.0.0.1 at 2016-05-30 17:28:47 +0530
+Processing by HomeController#create_slider as */*
+  Parameters: {"count"=>"3"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "child_sliders" ("count", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["count", 3], ["value", 0], ["created_at", "2016-05-30 11:58:47.507861"], ["updated_at", "2016-05-30 11:58:47.507861"]]
+  [1m[35m (141.3ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 144ms (Views: 0.6ms | ActiveRecord: 141.4ms)
+
+
+Started POST "/create_slider" for 127.0.0.1 at 2016-05-30 17:28:47 +0530
+Processing by HomeController#create_slider as */*
+  Parameters: {"count"=>"4"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "child_sliders" ("count", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["count", 4], ["value", 0], ["created_at", "2016-05-30 11:58:47.654155"], ["updated_at", "2016-05-30 11:58:47.654155"]]
+  [1m[36m (120.3ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 122ms (Views: 0.3ms | ActiveRecord: 120.4ms)
+
+
+Started POST "/set_child_slider_value" for 127.0.0.1 at 2016-05-30 17:28:49 +0530
+Processing by HomeController#set_child_slider_value as */*
+  Parameters: {"value"=>"2", "count"=>"3"}
+  [1m[35mChildSlider Load (0.1ms)[0m  SELECT  "child_sliders".* FROM "child_sliders" WHERE "child_sliders"."count" = ? LIMIT 1  [["count", 3]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "child_sliders" SET "value" = ?, "updated_at" = ? WHERE "child_sliders"."id" = ?  [["value", 2], ["updated_at", "2016-05-30 11:58:49.223684"], ["id", 36]]
+  [1m[36m (143.4ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 146ms (Views: 0.3ms | ActiveRecord: 143.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-30 17:28:49 +0530
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/get_config" for 127.0.0.1 at 2016-05-30 17:28:49 +0530
+Processing by HomeController#get_config as */*
+  [1m[35mParentSlider Load (0.1ms)[0m  SELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1
+  [1m[36mChildSlider Load (0.1ms)[0m  [1mSELECT "child_sliders"."value" FROM "child_sliders"  ORDER BY "child_sliders"."count" ASC[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/set_parent_slider_value" for 127.0.0.1 at 2016-05-30 17:29:10 +0530
+Processing by HomeController#set_parent_slider_value as */*
+  Parameters: {"slider"=>"6"}
+  [1m[35mParentSlider Load (0.1ms)[0m  SELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "parent_sliders" SET "value" = ?, "updated_at" = ? WHERE "parent_sliders"."id" = ?[0m  [["value", 6], ["updated_at", "2016-05-30 11:59:10.909261"], ["id", 2]]
+  [1m[35m (109.6ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 113ms (Views: 0.9ms | ActiveRecord: 109.8ms)
+
+
+Started POST "/create_slider" for 127.0.0.1 at 2016-05-30 17:29:11 +0530
+Processing by HomeController#create_slider as */*
+  Parameters: {"count"=>"5"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "child_sliders" ("count", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["count", 5], ["value", 0], ["created_at", "2016-05-30 11:59:11.031328"], ["updated_at", "2016-05-30 11:59:11.031328"]]
+  [1m[36m (112.8ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 116ms (Views: 0.9ms | ActiveRecord: 113.0ms)
+
+
+Started POST "/create_slider" for 127.0.0.1 at 2016-05-30 17:29:11 +0530
+Processing by HomeController#create_slider as */*
+  Parameters: {"count"=>"6"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "child_sliders" ("count", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["count", 6], ["value", 0], ["created_at", "2016-05-30 11:59:11.152097"], ["updated_at", "2016-05-30 11:59:11.152097"]]
+  [1m[35m (158.6ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 162ms (Views: 0.5ms | ActiveRecord: 158.8ms)
+
+
+Started POST "/set_child_slider_value" for 127.0.0.1 at 2016-05-30 17:29:12 +0530
+Processing by HomeController#set_child_slider_value as */*
+  Parameters: {"value"=>"1", "count"=>"4"}
+  [1m[36mChildSlider Load (0.1ms)[0m  [1mSELECT  "child_sliders".* FROM "child_sliders" WHERE "child_sliders"."count" = ? LIMIT 1[0m  [["count", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "child_sliders" SET "value" = ?, "updated_at" = ? WHERE "child_sliders"."id" = ?[0m  [["value", 1], ["updated_at", "2016-05-30 11:59:12.431662"], ["id", 37]]
+  [1m[35m (154.9ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 157ms (Views: 0.3ms | ActiveRecord: 155.2ms)
+
+
+Started POST "/set_child_slider_value" for 127.0.0.1 at 2016-05-30 17:29:13 +0530
+Processing by HomeController#set_child_slider_value as */*
+  Parameters: {"value"=>"2", "count"=>"5"}
+  [1m[36mChildSlider Load (0.1ms)[0m  [1mSELECT  "child_sliders".* FROM "child_sliders" WHERE "child_sliders"."count" = ? LIMIT 1[0m  [["count", 5]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "child_sliders" SET "value" = ?, "updated_at" = ? WHERE "child_sliders"."id" = ?[0m  [["value", 2], ["updated_at", "2016-05-30 11:59:13.262761"], ["id", 38]]
+  [1m[35m (124.5ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 127ms (Views: 0.3ms | ActiveRecord: 124.7ms)
+
+
+Started POST "/set_child_slider_value" for 127.0.0.1 at 2016-05-30 17:29:14 +0530
+Processing by HomeController#set_child_slider_value as */*
+  Parameters: {"value"=>"1", "count"=>"6"}
+  [1m[36mChildSlider Load (0.1ms)[0m  [1mSELECT  "child_sliders".* FROM "child_sliders" WHERE "child_sliders"."count" = ? LIMIT 1[0m  [["count", 6]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "child_sliders" SET "value" = ?, "updated_at" = ? WHERE "child_sliders"."id" = ?[0m  [["value", 1], ["updated_at", "2016-05-30 11:59:14.243294"], ["id", 39]]
+  [1m[35m (127.8ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 130ms (Views: 0.3ms | ActiveRecord: 128.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-30 17:29:15 +0530
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/get_config" for 127.0.0.1 at 2016-05-30 17:29:15 +0530
+Processing by HomeController#get_config as */*
+  [1m[36mParentSlider Load (0.1ms)[0m  [1mSELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1[0m
+  [1m[35mChildSlider Load (0.1ms)[0m  SELECT "child_sliders"."value" FROM "child_sliders"  ORDER BY "child_sliders"."count" ASC
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/set_parent_slider_value" for 127.0.0.1 at 2016-05-30 17:29:31 +0530
+Processing by HomeController#set_parent_slider_value as */*
+  Parameters: {"slider"=>"10"}
+  [1m[36mParentSlider Load (0.1ms)[0m  [1mSELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "parent_sliders" SET "value" = ?, "updated_at" = ? WHERE "parent_sliders"."id" = ?  [["value", 10], ["updated_at", "2016-05-30 11:59:31.385061"], ["id", 2]]
+  [1m[36m (127.4ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 130ms (Views: 0.3ms | ActiveRecord: 127.6ms)
+
+
+Started POST "/create_slider" for 127.0.0.1 at 2016-05-30 17:29:31 +0530
+Processing by HomeController#create_slider as */*
+  Parameters: {"count"=>"7"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "child_sliders" ("count", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["count", 7], ["value", 0], ["created_at", "2016-05-30 11:59:31.525099"], ["updated_at", "2016-05-30 11:59:31.525099"]]
+  [1m[35m (104.6ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 107ms (Views: 0.3ms | ActiveRecord: 104.8ms)
+
+
+Started POST "/create_slider" for 127.0.0.1 at 2016-05-30 17:29:31 +0530
+Processing by HomeController#create_slider as */*
+  Parameters: {"count"=>"8"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "child_sliders" ("count", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["count", 8], ["value", 0], ["created_at", "2016-05-30 11:59:31.633351"], ["updated_at", "2016-05-30 11:59:31.633351"]]
+  [1m[36m (130.2ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 132ms (Views: 0.4ms | ActiveRecord: 130.4ms)
+
+
+Started POST "/create_slider" for 127.0.0.1 at 2016-05-30 17:29:31 +0530
+Processing by HomeController#create_slider as */*
+  Parameters: {"count"=>"9"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "child_sliders" ("count", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["count", 9], ["value", 0], ["created_at", "2016-05-30 11:59:31.768600"], ["updated_at", "2016-05-30 11:59:31.768600"]]
+  [1m[35m (120.3ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 124ms (Views: 0.9ms | ActiveRecord: 120.5ms)
+
+
+Started POST "/create_slider" for 127.0.0.1 at 2016-05-30 17:29:31 +0530
+Processing by HomeController#create_slider as */*
+  Parameters: {"count"=>"10"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "child_sliders" ("count", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["count", 10], ["value", 0], ["created_at", "2016-05-30 11:59:31.926275"], ["updated_at", "2016-05-30 11:59:31.926275"]]
+  [1m[36m (113.4ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 116ms (Views: 0.9ms | ActiveRecord: 113.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-30 17:29:32 +0530
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/get_config" for 127.0.0.1 at 2016-05-30 17:29:32 +0530
+Processing by HomeController#get_config as */*
+  [1m[35mParentSlider Load (0.1ms)[0m  SELECT  "parent_sliders".* FROM "parent_sliders"  ORDER BY "parent_sliders"."id" ASC LIMIT 1
+  [1m[36mChildSlider Load (0.1ms)[0m  [1mSELECT "child_sliders"."value" FROM "child_sliders"  ORDER BY "child_sliders"."count" ASC[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
