@@ -1,0 +1,122 @@
+<style>
+  .child_slider {
+    margin: 30px;
+  }
+</style>
+
+<h3>Parent Slider</h3>
+
+<div id="parent_slider"></div>
+
+<div id="child_sliders">
+  <div id="child_sliders_info">
+</div>
+
+<script>
+$(document).ready(function() {
+
+  // Get Initial Config
+  $.ajax({
+    type: "POST",
+    url: "/get_config",
+    success: function(data) {
+      $("#parent_slider").slider('value', data['parent_slider_init']);
+      init_child_sliders(data['parent_slider_init'])
+      init_child_sliders_positions(data['child_slider_init'])
+    }
+  })
+
+  // Parent Slider Init
+  $('#parent_slider').slider({
+    max: 10,
+    slide: function( event, ui ) {
+      $.ajax({
+        type: "POST",
+        url: '/set_parent_slider_value',
+        data: { slider: ui.value }
+      }).done(function() {
+        generate_n_sliders(ui.value)
+      });
+    }
+  });
+
+  // Generate n child sliders based on parent slider
+  function generate_n_sliders(n) {
+    $('#child_sliders_info').text('Total Child Sliders ' + n);
+    total_sliders_available = $('.child_slider').length
+    if(total_sliders_available < n) {
+      sliders_to_add = n - total_sliders_available
+      for (i = 0; i < sliders_to_add; i++) {
+        $('#child_sliders').append("<div class='child_slider' data-count=" + (total_sliders_available + i + 1) + "></div>")
+        create_slider(total_sliders_available + i + 1)
+      }
+      $('.child_slider').slider({
+        max: 10,
+        slide: function( event, ui ) {
+          $.ajax({
+            type: "POST",
+            url: '/set_child_slider_value',
+            data: { value: ui.value, count: $(this).attr('data-count') }
+          })
+        }
+      });
+    }
+    else if(total_sliders_available > n) {
+      sliders_to_remove = total_sliders_available - n
+      for(i = 0; i < sliders_to_remove; i++) {
+        total_child_sliders = $('.child_slider').length
+        delete_slider(total_child_sliders)
+        $('.child_slider')[total_child_sliders-1].remove()
+      }
+    }
+  }
+
+  // Init Child Sliders on page reload
+  function init_child_sliders(child_sliders) {
+    $('#child_sliders_info').text('Total Child Sliders ' + child_sliders);
+    for (i = 0; i < child_sliders; i++) {
+      $('#child_sliders').append("<div class='child_slider' data-count=" + (i + 1) + "></div>")
+    }
+    $('.child_slider').slider({
+      max: 10,
+      slide: function( event, ui ) {
+        $.ajax({
+          type: "POST",
+          url: '/set_child_slider_value',
+          data: { value: ui.value, count: $(this).attr('data-count') }
+        })
+      }
+    });
+  }
+
+  // Init Child Slider positions
+  function init_child_sliders_positions(child_slider_init) {
+    console.log(child_slider_init)
+    $('.child_slider').each(function(index) {
+      $(this).slider('value', child_slider_init[index]);
+    })
+  }
+
+  // Create a ChildSlider object
+  function create_slider(nth) {
+    console.log(nth)
+    $.ajax({
+      type: "POST",
+      url: '/create_slider',
+      data: { count: nth }
+    })
+  }
+
+  // Delete a ChildSlider object
+  function delete_slider(nth) {
+    console.log(nth)
+    $.ajax({
+      type: "POST",
+      url: '/delete_slider',
+      data: { count: nth }
+    })
+  }
+
+})
+
+</script>
